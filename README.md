@@ -6,7 +6,7 @@ In 2015, Microchip released a modified 4.2 series Linux kernel to support their 
 
 PIC32 support was added to the mainline kernel tree in version 4.5 but did not provide the same level of peripheral support as the earlier 4.2 version. So you could use most of the features of the chip but with an unsupported kernel or the latest kernel with many peripherals unavailable.
 
-After I discovered I could apply the 4.2.x series patches to the Microchip kernel and used 4.2.8 for a time, I wondered if I could patch to the next kernel revision and get that to work. With the announcement that the 4.4 series was to be LTS and supported until February 2022, it seemed reasonable to try and get to that version and then see if the LTS patches would work.
+After I discovered I could apply the 4.2.x series patches to the Microchip kernel and used 4.2.8 for a time, I wondered if I could patch to the next kernel revision and get that to work. With the announcement that the 4.4 series was to be LTS and supported until February 2022, it seemed reasonable to try and get to that version and then test the LTS patches.
 
 ## How to use
 
