@@ -91,7 +91,7 @@ umount /mnt
 
 ## Warm boot sequence reference
 
-This proceeds as for the cold boot sequence except that the SRAM test is not done. If you want to change to recovery mode, hold down the appropriate switch before issuing the `reboot` command.
+If you want to change to recovery mode, hold down the appropriate switch before issuing the `reboot` command.
 
 ## Linux environments
 
