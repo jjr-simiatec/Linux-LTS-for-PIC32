@@ -5,15 +5,15 @@
 * PIC32MZ Embedded Graphics with External DRAM (DA) Starter Kit, Microchip part number DM320008 or DM320008-C
 * microSDHC card (2GB minimum) and/or TFTP server
 * PuTTY or equivalent Terminal Emulator
-* MPLAB X IDE for initial installation of the bootloader
+* MPLAB X IDE for initial installation of U-Boot
 
 ## Manifest
 
-`u-boot.hex` - U-Boot with Ethernet, MMC and USB support
-`pic32-boot-recovery.itb` - FIT image containing the Linux kernel, RAM disk and device tree
-`pic32-boot.itb` - FIT image containing the Linux kernel and device tree
-`modules-pic32.txz` - Modules for the kernel in the FIT images
-`rootfs.tar.xz` - rootfs to be transferred to the SD card
+`u-boot.hex` - U-Boot with Ethernet, MMC and USB support  
+`pic32-boot-recovery.itb` - FIT image containing the Linux kernel, RAM disk and device tree  
+`pic32-boot.itb` - FIT image containing the Linux kernel and device tree  
+`modules-pic32.txz` - Modules for the kernel in the FIT images  
+`rootfs.tar.xz` - rootfs to be transferred to the SD card  
 `id_ed25519` - SSH *private key* for example user. Refer to security notes!
 
 ## Installing U-Boot
