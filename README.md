@@ -1,5 +1,7 @@
 # Linux-LTS-For-PIC32
 
+**To quickly try a working Linux system using a PIC32MZ DA Starter Kit, go to the `release` directory.**
+
 ## Background
 
 In 2015, Microchip released a modified 4.2 series Linux kernel to support their PIC32MZ DA series MCU. The repository for the PIC32MZ DA kernel can be found here https://github.com/MicrochipTech/linux-pic32.
