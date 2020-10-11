@@ -8,7 +8,7 @@
 #define GREEN_LED       _LATH_LATH2_MASK
 
 // To use:
-// * srec_cat stub.hex -intel u-boot.hex -intel -offset -0x80000000 -o u-boot-skde.hex -intel
+// * srec_cat stub.hex -intel u-boot.srec -offset -0x80000000 -o u-boot-skde.hex -intel
 // * Use PKOB to flash PIC32
 
 #define USER_APP_RESET_ADDRESS      (__KSEG0_PROGRAM_MEM_BASE)
