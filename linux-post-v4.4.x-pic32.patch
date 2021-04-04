@@ -1,0 +1,53 @@
+diff --git a/arch/mips/include/asm/cacheflush.h b/arch/mips/include/asm/cacheflush.h
+index b690668d8..176de586a 100644
+--- a/arch/mips/include/asm/cacheflush.h
++++ b/arch/mips/include/asm/cacheflush.h
+@@ -76,9 +76,6 @@ static inline void flush_anon_page(struct vm_area_struct *vma,
+ static inline void flush_icache_page(struct vm_area_struct *vma,
+ 	struct page *page)
+ {
+-	if (cpu_has_dc_aliases ||
+-		((vma->vm_flags & VM_EXEC) && !cpu_has_ic_fills_f_dc))
+-		__flush_dcache_page(page);
+ }
+ 
+ extern void (*flush_icache_range)(unsigned long start, unsigned long end);
+diff --git a/arch/mips/kernel/signal.c b/arch/mips/kernel/signal.c
+index eb827a1f1..9e35b6b26 100644
+--- a/arch/mips/kernel/signal.c
++++ b/arch/mips/kernel/signal.c
+@@ -195,9 +195,6 @@ static int restore_msa_extcontext(void __user *buf, unsigned int size)
+ 	unsigned int csr;
+ 	int i, err;
+ 
+-	if (!config_enabled(CONFIG_CPU_HAS_MSA))
+-		return SIGSYS;
+-
+ 	if (!config_enabled(CONFIG_CPU_HAS_MSA))
+ 		return SIGSYS;
+ 
+diff --git a/drivers/usb/musb/musb_host.c b/drivers/usb/musb/musb_host.c
+index d4e1e306f..fd0b2ecd7 100644
+--- a/drivers/usb/musb/musb_host.c
++++ b/drivers/usb/musb/musb_host.c
+@@ -1824,7 +1824,6 @@ void musb_host_rx(struct musb *musb, u8 epnum)
+ 	u16			rx_csr, val;
+ 	bool			iso_err = false;
+ 	bool			done = false;
+-	int			ret;
+ 	u32			status;
+ 	struct dma_channel	*dma;
+ 	unsigned int sg_flags = SG_MITER_ATOMIC | SG_MITER_TO_SG;
+@@ -2003,10 +2002,8 @@ void musb_host_rx(struct musb *musb, u8 epnum)
+ 				qh->offset,
+ 				urb->transfer_buffer_length);
+ 
+-			ret = musb_rx_dma_in_inventra_cppi41(c, hw_ep, qh,
+-							      urb, xfer_len,
+-							      iso_err);
+-			if (ret)
++			if (musb_rx_dma_in_inventra_cppi41(c, hw_ep, qh, urb,
++							   xfer_len, iso_err))
+ 				goto finish;
+ 			else
+ 				dev_err(musb->controller, "error: rx_dma failed\n");
