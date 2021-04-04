@@ -1,0 +1,12 @@
+diff --git a/arch/mips/boot/dts/pic32/pic32mzda_sk.dts b/arch/mips/boot/dts/pic32/pic32mzda_sk.dts
+index 3f47ef2ff..e7bc474cb 100644
+--- a/arch/mips/boot/dts/pic32/pic32mzda_sk.dts
++++ b/arch/mips/boot/dts/pic32/pic32mzda_sk.dts
+@@ -134,6 +134,7 @@
+ &sdhci {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_sdhc1>;
++	cd-inverted;
+ 	status = "okay";
+ };
+ 
