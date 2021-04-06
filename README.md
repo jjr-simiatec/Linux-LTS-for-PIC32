@@ -95,13 +95,13 @@ If you want to change to recovery mode, hold down the appropriate switch before 
 
 ## Linux environments
 
-For both *operational* and *recovery* enviroments, the same Linux kernel v4.4.232 is used.
+For both *operational* and *recovery* enviroments, the same Linux kernel v4.4.264 is used.
 
 The rootfs for the operational environment resides on partition 2 of the SD card. This partition is mounted read-only so the power can be removed at any time during normal use without corrupting the filesystem.
 
 The rootfs for the recovery environment is RAM based. Once the image has been loaded, the SD card is no longer needed and can be swapped or removed.
 
-Both rootfs types were built using Buildroot v2020.08. MUSL is the C runtime and BusyBox provides most of the usual utilities. Full versions of utilities/tools are provided where the BusyBox equivalents are limited or have compatibility issues.
+Both rootfs types were built using Buildroot v2021.02. MUSL is the C runtime and BusyBox provides most of the usual utilities. Full versions of utilities/tools are provided where the BusyBox equivalents are limited or have compatibility issues.
 
 An IP address will be obtained using DHCP and the time set via NTP if appropriate connectivity is available. SSH is also available.
 
